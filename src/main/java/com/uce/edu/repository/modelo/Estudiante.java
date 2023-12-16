@@ -70,4 +70,12 @@ public class Estudiante {
 		this.fechaNacimiento = fechaNacimiento;
 	}
 
+	@Override
+	public String toString() {
+		return "Estudiante [id=" + id + ", nombre=" + nombre + ", apellido=" + apellido + ", cedula=" + cedula
+				+ ", fechaNacimiento=" + fechaNacimiento + "]";
+	}
+
+	
+	
 }
