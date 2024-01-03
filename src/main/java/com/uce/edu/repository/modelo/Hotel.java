@@ -1,10 +1,14 @@
 package com.uce.edu.repository.modelo;
 
+import java.util.List;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 
@@ -22,7 +26,18 @@ public class Hotel {
 	@Column(name = "hote_direccion")
 	private String direccion;
 
+	@OneToMany(mappedBy = "hotel",cascade = CascadeType.ALL)
+	private List<Habitacion> habitaciones;
+
 	// set get
+	public List<Habitacion> getHabitaciones() {
+		return habitaciones;
+	}
+
+	public void setHabitaciones(List<Habitacion> habitaciones) {
+		this.habitaciones = habitaciones;
+	}
+
 	public Integer getId() {
 		return id;
 	}
@@ -49,7 +64,8 @@ public class Hotel {
 
 	@Override
 	public String toString() {
-		return "Hotel [id=" + id + ", nombre=" + nombre + ", direccion=" + direccion + "]";
+		return "Hotel [id=" + id + ", nombre=" + nombre + ", direccion=" + direccion + ", habitaciones=" + habitaciones
+				+ "]";
 	}
 
 }
