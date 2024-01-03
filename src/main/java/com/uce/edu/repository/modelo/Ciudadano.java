@@ -1,5 +1,6 @@
 package com.uce.edu.repository.modelo;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -13,10 +14,10 @@ import jakarta.persistence.Table;
 @Table(name = "ciudadano")
 public class Ciudadano {
 
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_ciudadano")
-	@SequenceGenerator(name = "seq_ciudadano", sequenceName = "seq_ciudadano", allocationSize = 1)
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_ciudadano")
+	@SequenceGenerator(name = "seq_ciudadano", sequenceName = "seq_ciudadano", allocationSize = 1)
 	@Column(name = "ciud_id")
 	private Integer id;
 	@Column(name = "ciud_nombre")
@@ -24,7 +25,7 @@ public class Ciudadano {
 	@Column(name = "ciud_apellido")
 	private String apellido;
 
-	@OneToOne(mappedBy = "ciudadano")
+	@OneToOne(mappedBy = "ciudadano",cascade = CascadeType.ALL)
 	private Empleado empleado;
 
 	// set get

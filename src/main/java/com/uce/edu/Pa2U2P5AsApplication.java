@@ -22,7 +22,7 @@ public class Pa2U2P5AsApplication implements CommandLineRunner {
 
 	@Autowired
 	private IEmpleadoService empleadoService;
-	
+
 	@Autowired
 	private ICiudadanoService ciudadanoService;
 
@@ -35,31 +35,28 @@ public class Pa2U2P5AsApplication implements CommandLineRunner {
 		// TODO Auto-generated method stub
 
 	
+	
 		
-		
-		
-		
-		Ciudadano c= new Ciudadano();
-		c.setNombre("Rony");
-		c.setApellido("Salazar");
 	
 		
 		
-		Empleado e= new Empleado();
+		Empleado e = new Empleado();
+	
 		e.setFechaIngreso(LocalDateTime.now());
-		e.setSalario(new BigDecimal(100));
-		c.setEmpleado(e);
-	
+		e.setSalario(new BigDecimal(5100));
 		
-		e.setCiudadano(this.ciudadanoService.buscar(3));
+		
 		
 	
 		
-
-	
+		Ciudadano c1 = new Ciudadano();
+		c1.setNombre("Jairo");
+		c1.setApellido("Salazar");
+			
+		e.setCiudadano(c1);
+		c1.setEmpleado(e);
 		
-		//System.out.println(this.ciudadanoService.buscar(3));
-		
+		this.ciudadanoService.guardar(c1);
 	}
 
 }
