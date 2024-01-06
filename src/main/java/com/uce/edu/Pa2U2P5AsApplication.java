@@ -45,12 +45,11 @@ public class Pa2U2P5AsApplication implements CommandLineRunner {
 		Set<Autor> autores = new HashSet<>();
 		autores.add(a);
 		autores.add(a1);
-		
-		l.setAutores(autores);
-		
+	
 		Set<Libro> libros = new HashSet<>();
 		libros.add(l);
 		
+		l.setAutores(autores);
 		a.setLibros(libros);
 		a1.setLibros(libros);
 		
