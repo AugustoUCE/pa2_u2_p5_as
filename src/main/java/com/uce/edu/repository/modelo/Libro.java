@@ -18,8 +18,8 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "libro")
-@NamedQuery(name="Libro.queryBuscarPorTitulo",query = "SELECT l FROM libro l WHERE l.titulo =: var")
-@NamedQuery(name="Libro.queryBuscarPorFecha",query="SELECT l FROM Libro l WHERE l.fechaPublicacion > : var")
+@NamedQuery(name="Libro.queryBuscarPorTitulo",query = "SELECT l FROM Libro l WHERE l.titulo =:var")
+@NamedQuery(name="Libro.queryBuscarPorFecha",query = "SELECT l FROM Libro l WHERE l.fechaPublicacion >=:var")
 public class Libro {
 
 	@Id

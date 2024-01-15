@@ -53,9 +53,9 @@ public class LibroServiceImpl implements ILibroService {
 	}
 
 	@Override
-	public List<Libro> buscarPorFecha(LocalDateTime fechaPublicacion) {
+	public List<Libro> buscarPorFechaPublicacion(LocalDateTime fecha) {
 		// TODO Auto-generated method stub
-		return this.libroRepository.seleccionarPorFechaPublicacion(fechaPublicacion);
+		return this.libroRepository.seleccionarPorFechaPublicacion(fecha);
 	}
 
 	@Override
@@ -65,9 +65,9 @@ public class LibroServiceImpl implements ILibroService {
 	}
 
 	@Override
-	public List<Libro> buscarPorFechaPublicacion(LocalDateTime fecha) {
+	public List<Libro> buscarPorFechaTyped(LocalDateTime fecha) {
 		// TODO Auto-generated method stub
-		return this.libroRepository.seleccionarPorFecha(fecha);
+		return this.libroRepository.seleccionarPorFechaTyped(fecha);
 	}
 
 	@Override
@@ -81,5 +81,6 @@ public class LibroServiceImpl implements ILibroService {
 		// TODO Auto-generated method stub
 		return this.libroRepository.seleccionarPorFechaNamed(fecha);
 	}
+
 
 }

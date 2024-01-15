@@ -18,20 +18,14 @@ public interface ILibroService {
 
 	public void eliminar(Integer id);
 
-	// Query
-
+	//Query
 	public Libro buscarPorNombre(String nombre);
-
-	public List<Libro> buscarPorFecha(LocalDateTime fechaPublicacion);
-
-	// TypedQuery
-	public Libro buscarPorTitulo(String titulo);
-
 	public List<Libro> buscarPorFechaPublicacion(LocalDateTime fecha);
-
-	// NamedQuery
+	//Typed
+	public Libro buscarPorTitulo(String titulo);
+	public List<Libro> buscarPorFechaTyped(LocalDateTime fecha);	
+	//NamedQuery
 	public Libro buscarPorTituloNamed(String titulo);
-
 	public List<Libro> buscarPorFechaNamed(LocalDateTime fecha);
-
+	
 }

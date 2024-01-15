@@ -28,36 +28,39 @@ public class Pa2U2P5AsApplication implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 		// TODO Auto-generated method stub
 
-		// Query
-		System.out.println("Query");
-		Libro l1 = this.libroService.buscarPorNombre("JAVA");
-		System.out.println(l1);
-		List<Libro> listPorFecha = this.libroService.buscarPorFecha(LocalDateTime.of(2023, 1, 1, 7, 15));
-
-		for (Libro libro : listPorFecha) {
-			System.out.println(libro);
-		}
-
-		// TypedQuery
-		System.out.println("TypedQuery");
-		Libro l = this.libroService.buscarPorTitulo("JAVA");
+		
+	//Query
+		Libro l = this.libroService.buscarPorNombre("JAVA");
 		System.out.println(l);
-
-		List<Libro> list = this.libroService.buscarPorFechaPublicacion(LocalDateTime.of(2023, 1, 1, 7, 15));
-		for (Libro libro : list) {
+	
+		List<Libro> list1=this.libroService.buscarPorFechaPublicacion(LocalDateTime.of(2024, 01, 10, 18, 0));
+		for (Libro libro : list1) {
 			System.out.println(libro);
+			}
+			
+	
+	//TypedQuery
+		System.out.println("TypedQuery");
+		Libro l1=this.libroService.buscarPorTitulo("JAVA");
+		System.out.println(l1);
+		
+		List<Libro> list2=this.libroService.buscarPorFechaTyped(LocalDateTime.of(2024, 01, 10, 18, 0));
+		for (Libro libro1 : list2) {
+			System.out.println(libro1);
 		}
-
-		// NamedQuery
-		System.out.println("NamedQuery");
-		Libro l2 = this.libroService.buscarPorTitulo("PYTHON");
-		System.out.println(l2);
-
-		List<Libro> listNamed = this.libroService.buscarPorFechaNamed(LocalDateTime.of(2023, 1, 1, 7, 15));
-		for (Libro libro : listNamed) {
-			System.out.println(libro);
-		}
-
+	//NamedQuery
+		
+	System.out.println("NamedQuery");
+	
+	Libro l2=this.libroService.buscarPorTituloNamed("PYTHON");
+	System.out.println(l2);
+	
+	List<Libro> list3=this.libroService.buscarPorFechaNamed(LocalDateTime.of(2024, 01, 10, 18, 0));
+	for (Libro libro : list3) {
+		System.out.println(libro);
 	}
+	
+	}
+	
 
 }

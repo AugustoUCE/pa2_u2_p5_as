@@ -17,17 +17,18 @@ public interface ILibroRepository {
 	public void actulizar(Libro libro);
 
 	public void eliminar(Integer id);
-	
+
 	//Query
-	
 	public Libro seleccionarPorNombre(String nombre);
-	public List<Libro> seleccionarPorFechaPublicacion(LocalDateTime fechaPublicacion);
+	public List<Libro> seleccionarPorFechaPublicacion(LocalDateTime fecha);
 	
-	//TypedQuery
+	//Typed
 	public Libro seleccionarPorTitulo(String titulo);
-	public List<Libro> seleccionarPorFecha(LocalDateTime fecha);
+	public List<Libro> seleccionarPorFechaTyped(LocalDateTime fecha);
 	
 	//NamedQuery
 	public Libro seleccionarPorTituloNamed(String titulo);
 	public List<Libro> seleccionarPorFechaNamed(LocalDateTime fecha);
+	
+
 }
