@@ -1,5 +1,8 @@
 package com.uce.edu;
 
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -27,44 +30,28 @@ public class Pa2U2P5AsApplication implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 		// TODO Auto-generated method stub
 
-	/*	
-	//Query
-		Libro l = this.libroService.buscarPorNombre("JAVA");
-		System.out.println(l);
+		//Criteria API Query 
 	
-		List<Libro> list1=this.libroService.buscarPorFechaPublicacion(LocalDateTime.of(2024, 01, 10, 18, 0));
-		for (Libro libro : list1) {
-			System.out.println(libro);
-			}
-			
-	
-	//TypedQuery
-		System.out.println("TypedQuery");
-		Libro l1=this.libroService.buscarPorTitulo("JAVA");
-		System.out.println(l1);
+		Ciudadano ciu=this.ciudadanoService.buscarPorApellido("salazar");
+		System.out.println(ciu);
 		
-		List<Libro> list2=this.libroService.buscarPorFechaTyped(LocalDateTime.of(2024, 01, 10, 18, 0));
-		for (Libro libro1 : list2) {
-			System.out.println(libro1);
-		}
-	//NamedQuery
+		Ciudadano ciu1=this.ciudadanoService.buscarPorCriteria("augusto", "salazar", "1752083905");
+				System.out.println(ciu1);
+				
+		Ciudadano ciu2=this.ciudadanoService.buscarPorCriteria("augusto", "salazar", "0552083905");
+		System.out.println(ciu2);	
 		
-	System.out.println("NamedQuery");
-	
-	Libro l2=this.libroService.buscarPorTituloNamed("PYTHON");
-	System.out.println(l2);
-	
-	List<Libro> list3=this.libroService.buscarPorFechaNamed(LocalDateTime.of(2024, 01, 10, 18, 0));
-	for (Libro libro : list3) {
-		System.out.println(libro);
-	}
-	*/
-	
-		Empleado emp = this.ciudadanoService.buscarPorCedula("175208");
-		System.out.println(emp);
+		//Ciudadano ciu3=this.ciudadanoService.buscarPorCriteria("augusto", "salazar", "0652083905");
+		//System.out.println(ciu3);
 		
-		Ciudadano cui=this.ciudadanoService.buscarPorCedulaCiu("175208");
-		System.out.println(cui);
+		System.out.println("\nCriteria API Query AND OR ");
+		Ciudadano ciu4=this.ciudadanoService.buscarPorCriteriaAndOr("augusto", "salazar", "1752083905");
+		System.out.println(ciu4);
+		
+		Ciudadano ciu5=this.ciudadanoService.buscarPorCriteriaAndOr("augusto", "salazar", "0552083905");
+		System.out.println(ciu5);
+		
+		
 		
 		
 	}
